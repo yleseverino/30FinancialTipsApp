@@ -72,6 +72,7 @@ fun TipItem(modifier: Modifier = Modifier) {
         elevation = CardDefaults.cardElevation(
             defaultElevation = 10.dp
         ),
+        shape = MaterialTheme.shapes.large,
         modifier = modifier.padding(8.dp)
     ) {
         Column {
@@ -85,7 +86,7 @@ fun TipItem(modifier: Modifier = Modifier) {
 
                 Text(
                     text = "Use the credit card with wisdom",
-                    style = MaterialTheme.typography.headlineSmall,
+                    style = MaterialTheme.typography.headlineMedium,
                     modifier = modifier.weight(1f)
 
                 )
@@ -95,7 +96,7 @@ fun TipItem(modifier: Modifier = Modifier) {
             if (expanded) {
                 Text(
                     text = """The limit in your credit car is not your money is money that the bank lend to you. Sometimes it is crever to use that money and gain some benefits in your bank, but if you don`t have money to paid the bill you should not use the credit card""",
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyLarge,
                     modifier = modifier.padding(8.dp)
                 )
             }

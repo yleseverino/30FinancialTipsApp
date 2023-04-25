@@ -1,4 +1,6 @@
 <resources>
-    <string name="app_name">FinancialTips</string>
+    <string name="app_name">Financial Tips</string>
     <string name="expand_button_content_description">See more or less information about the financial tip.</string>
+    <string name="financial_tip_headline_1">Use the credit card with wisdom</string>
+    <string name="financial_tip_desc_1">The limit in your credit car is not your money is money that the bank lend to you. Sometimes it is crever to use that money and gain some benefits in your bank, but if you don`t have money to paid the bill you should not use the credit card</string>
 </resources>

@@ -22,6 +22,10 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ExpandLess
 import androidx.compose.material.icons.filled.ExpandMore
+import androidx.compose.material.icons.outlined.CurrencyBitcoin
+import androidx.compose.material.icons.outlined.CurrencyExchange
+import androidx.compose.material.icons.outlined.Diamond
+import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -43,11 +47,13 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import com.example.financialtips.model.FinacialRepository.financialTips
 import com.example.financialtips.model.FinancialTip
 import com.example.financialtips.ui.theme.FinancialTipsTheme
@@ -82,7 +88,7 @@ fun FinancialApp() {
                     modifier = Modifier
                         .padding(padding)
                         .clip(MaterialTheme.shapes.large)
-                        .background(MaterialTheme.colorScheme.background)
+                        .background(MaterialTheme.colorScheme.background).shadow(1.dp, shape = MaterialTheme.shapes.large).zIndex(1f)
                 ) {
                     items(financialTips) { financialTip ->
                         Box(modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)) {
@@ -93,18 +99,44 @@ fun FinancialApp() {
             }
         })
 }
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FinancialAppBar() {
-    CenterAlignedTopAppBar(
-        title = { Text(text = stringResource(id = R.string.app_name), style = MaterialTheme.typography.titleLarge) },
-        colors = TopAppBarDefaults.largeTopAppBarColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer, scrolledContainerColor = MaterialTheme.colorScheme.tertiary),
-    )
+
+    Row(
+        modifier = Modifier
+            .background(MaterialTheme.colorScheme.tertiaryContainer)
+            .padding(horizontal = 16.dp, vertical = 16.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Icon(
+            imageVector = Icons.Outlined.CurrencyExchange,
+            contentDescription = null,
+            modifier = Modifier
+                .size(28.dp)
+                .padding(end = 4.dp)
+        )
+        Text(
+            text = "FINANCE TIPS",
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier.weight(1f)
+        )
+        Icon(
+            imageVector = Icons.Outlined.Search,
+            contentDescription = null,
+            modifier = Modifier.size(28.dp)
+        )
+    }
+//    CenterAlignedTopAppBar(
+//        title = { Text(text = stringResource(id = R.string.app_name), style = MaterialTheme.typography.titleLarge) },
+//        colors = TopAppBarDefaults.largeTopAppBarColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer, scrolledContainerColor = MaterialTheme.colorScheme.tertiary),
+//    )
 }
 
 @Composable
 fun FinancialTipItem(modifier: Modifier = Modifier, financialTip: FinancialTip) {
-    var expanded by remember { mutableStateOf(true) }
+    var expanded by remember { mutableStateOf(false) }
     Card(
         elevation = CardDefaults.cardElevation(
             defaultElevation = 10.dp
@@ -191,5 +223,13 @@ fun financialCard() {
 fun financialCardDarkMode() {
     FinancialTipsTheme(useDarkTheme = true) {
         FinancialTipItem(financialTip = financialTips[0])
+    }
+}
+
+@Preview(showBackground = false)
+@Composable
+fun financialCardAppBar() {
+    FinancialTipsTheme(useDarkTheme = true) {
+        FinancialAppBar()
     }
 }

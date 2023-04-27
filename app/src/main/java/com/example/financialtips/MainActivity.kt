@@ -91,7 +91,7 @@ fun FinancialApp() {
                         .background(MaterialTheme.colorScheme.background).shadow(1.dp, shape = MaterialTheme.shapes.large).zIndex(1f)
                 ) {
                     items(financialTips) { financialTip ->
-                        Box(modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)) {
+                        Box(modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)) {
                             FinancialTipItem(financialTip = financialTip)
                         }
                     }

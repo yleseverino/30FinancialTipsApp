@@ -3,4 +3,21 @@
     <string name="expand_button_content_description">See more or less information about the financial tip.</string>
     <string name="financial_tip_headline_1">Use the credit card with wisdom</string>
     <string name="financial_tip_desc_1">The limit in your credit car is not your money is money that the bank lend to you. Sometimes it is crever to use that money and gain some benefits in your bank, but if you don`t have money to paid the bill you should not use the credit card</string>
+    <string name="financial_tip_image_ref_1">Photo by Avery Evans on Unsplash</string>
+
+    <string name="financial_tip_headline_2">Learn how invest your money</string>
+    <string name="financial_tip_desc_2">When you invest your money, you let your cash work for you, in other words you are going to earn interest by the money that you have, so the amount of money it\'s not going to lose value by inflation.</string>
+    <string name="financial_tip_image_ref_2">Photo by Towfiqu barbhuiya on Unsplash</string>
+
+    <string name="financial_tip_headline_3">Build your emergency reserve</string>
+    <string name="financial_tip_desc_3">Everyone needs an emergency reserve, because we cannot predict the future and anything can go wrong, like you or someone can be involved in an accident, be fired or an unplanned pregnancy. So we need to at least have 6 months of our cost of living saved in a invest that we have liquidy.</string>
+    <string name="financial_tip_image_ref_3">Photo by Andre Taissin on Unsplash</string>
+
+    <string name="financial_tip_headline_4">Be efficient on how you spend your money</string>
+    <string name="financial_tip_desc_4">It’s easy to spend money, so it’s not difficult to waste your money on products or services that you don\'t need or even use. Then when we are going to buy or pay a bill we should ask ourselves “Am I reeling using the service well? Do I really need this product?“. By doing this you will save your money and only spend with the things that bring the most joy for you.</string>
+    <string name="financial_tip_image_ref_4">Photo by Zac Durant on Unsplash</string>
+
+    <string name="financial_tip_headline_5">Learn to cook</string>
+    <string name="financial_tip_desc_5">Buy food from restaurants or fast food services its expensive and not healthy, then learn the skill of cooking is something that can save a lot of money on the short time and on the long time by less expend with medicine and hospital. You don\'t need to be a culinary chef, by learning only the basics you will have a lot of options of food to cook.</string>
+    <string name="financial_tip_image_ref_5">Photo by Chinh Le Duc on Unsplash</string>
 </resources>

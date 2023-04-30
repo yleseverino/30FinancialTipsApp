@@ -88,7 +88,9 @@ fun FinancialApp() {
                     modifier = Modifier
                         .padding(padding)
                         .clip(MaterialTheme.shapes.large)
-                        .background(MaterialTheme.colorScheme.background).shadow(1.dp, shape = MaterialTheme.shapes.large).zIndex(1f)
+                        .background(MaterialTheme.colorScheme.background)
+                        .shadow(1.dp, shape = MaterialTheme.shapes.large)
+                        .zIndex(1f)
                 ) {
                     items(financialTips) { financialTip ->
                         Box(modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)) {
@@ -128,10 +130,6 @@ fun FinancialAppBar() {
             modifier = Modifier.size(28.dp)
         )
     }
-//    CenterAlignedTopAppBar(
-//        title = { Text(text = stringResource(id = R.string.app_name), style = MaterialTheme.typography.titleLarge) },
-//        colors = TopAppBarDefaults.largeTopAppBarColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer, scrolledContainerColor = MaterialTheme.colorScheme.tertiary),
-//    )
 }
 
 @Composable
@@ -173,6 +171,11 @@ fun FinancialTipItem(modifier: Modifier = Modifier, financialTip: FinancialTip) 
                 Text(
                     text = stringResource(id = financialTip.description),
                     style = MaterialTheme.typography.bodyLarge,
+                    modifier = modifier.padding(8.dp)
+                )
+                Text(
+                    text = stringResource(id = financialTip.imageRef),
+                    style = MaterialTheme.typography.bodySmall,
                     modifier = modifier.padding(8.dp)
                 )
             }

@@ -54,9 +54,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
+import com.example.compose.FinancialTipsTheme
 import com.example.financialtips.model.FinacialRepository.financialTips
 import com.example.financialtips.model.FinancialTip
-import com.example.financialtips.ui.theme.FinancialTipsTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,7 +83,7 @@ fun FinancialApp() {
             FinancialAppBar()
         },
         content = { padding ->
-            Box(modifier = Modifier.background(MaterialTheme.colorScheme.tertiaryContainer)) {
+            Box(modifier = Modifier.background(MaterialTheme.colorScheme.primaryContainer)) {
                 LazyColumn(
                     modifier = Modifier
                         .padding(padding)
@@ -108,7 +108,7 @@ fun FinancialAppBar() {
 
     Row(
         modifier = Modifier
-            .background(MaterialTheme.colorScheme.tertiaryContainer)
+            .background(MaterialTheme.colorScheme.primaryContainer)
             .padding(horizontal = 16.dp, vertical = 16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {

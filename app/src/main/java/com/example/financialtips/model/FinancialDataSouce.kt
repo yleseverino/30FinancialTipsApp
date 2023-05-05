@@ -34,5 +34,29 @@ object FinacialRepository {
             image = R.drawable.cook,
             imageRef = R.string.financial_tip_image_ref_5
         ),
+        FinancialTip(
+            title = R.string.financial_tip_headline_6,
+            description = R.string.financial_tip_desc_6,
+            image = R.drawable.fix,
+            imageRef = R.string.financial_tip_image_ref_6
+        ),
+        FinancialTip(
+            title = R.string.financial_tip_headline_7,
+            description = R.string.financial_tip_desc_7,
+            image = R.drawable.extra_money,
+            imageRef = R.string.financial_tip_image_ref_7
+        ),
+        FinancialTip(
+            title = R.string.financial_tip_headline_8,
+            description = R.string.financial_tip_desc_8,
+            image = R.drawable.graduation,
+            imageRef = R.string.financial_tip_image_ref_8
+        ),
+        FinancialTip(
+            title = R.string.financial_tip_headline_9,
+            description = R.string.financial_tip_desc_9,
+            image = R.drawable.meditation,
+            imageRef = R.string.financial_tip_image_ref_9
+        ),
     )
 }

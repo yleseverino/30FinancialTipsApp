@@ -1,6 +1,7 @@
 package com.example.financialtips
 
 import android.os.Bundle
+import android.os.ParcelFileDescriptor.OnCloseListener
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
@@ -25,7 +26,9 @@ import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.outlined.CurrencyBitcoin
 import androidx.compose.material.icons.outlined.CurrencyExchange
 import androidx.compose.material.icons.outlined.Diamond
+import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Search
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -36,10 +39,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBarColors
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -78,9 +83,12 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FinancialApp() {
+    var showAbout by remember {
+        mutableStateOf(false)
+    }
     Scaffold(
         topBar = {
-            FinancialAppBar()
+            FinancialAppBar(onClick = { showAbout = !showAbout })
         },
         content = { padding ->
             Box(modifier = Modifier.background(MaterialTheme.colorScheme.primaryContainer)) {
@@ -100,11 +108,19 @@ fun FinancialApp() {
                 }
             }
         })
+    if (showAbout) {
+        AboutDialog {
+            run { showAbout = !showAbout }
+        }
+    }
+
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FinancialAppBar() {
+fun FinancialAppBar(
+    onClick: () -> Unit
+) {
 
     Row(
         modifier = Modifier
@@ -124,10 +140,14 @@ fun FinancialAppBar() {
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.weight(1f)
         )
-        Icon(
-            imageVector = Icons.Outlined.Search,
-            contentDescription = null,
-            modifier = Modifier.size(28.dp)
+        IconButton(
+            onClick = onClick,
+            content = {
+                Icon(imageVector = Icons.Outlined.Info,
+                    contentDescription = null,
+                    modifier = Modifier.size(28.dp))
+            }
+
         )
     }
 }
@@ -213,6 +233,22 @@ private fun PlusButton(
 
 }
 
+@Composable
+private fun AboutDialog(
+    onClick: () -> Unit
+) {
+    AlertDialog(
+        title = { Text(text = "Created with ♡ by Yle S. Carvalho")},
+        onDismissRequest = onClick,
+        confirmButton = {
+            TextButton(onClick = onClick) {
+                Text(text = "Ok")
+            }
+        }
+    )
+
+}
+
 @Preview(showBackground = true)
 @Composable
 fun financialCard() {
@@ -233,6 +269,6 @@ fun financialCardDarkMode() {
 @Composable
 fun financialCardAppBar() {
     FinancialTipsTheme(useDarkTheme = true) {
-        FinancialAppBar()
+        FinancialAppBar(onClick = {})
     }
 }

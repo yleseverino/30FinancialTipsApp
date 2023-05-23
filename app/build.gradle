@@ -8,7 +8,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.github.yleseverino.30FinancialTipsApp"
+        applicationId "com.github.yleseverino.financialtips"
         minSdk 26
         targetSdk 33
         versionCode 1

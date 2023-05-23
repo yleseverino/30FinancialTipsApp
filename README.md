@@ -9,3 +9,13 @@
 
 
 **FinancialTips** is a simple [FOSS](https://en.m.wikipedia.org/wiki/Free_and_open-source_software) android app with some tips to you learn to better manage and earn more money.
+
+------
+
+<h2 align="center">Screenshots</h2>
+
+<video controls="" width="800" height="500" muted="" loop="" autoplay="">
+<source src="https://github.com/yleseverino/30FinancialTipsApp/demo_video" type="video/mp4">
+</video>
+
+------

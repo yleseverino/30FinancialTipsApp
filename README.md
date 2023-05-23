@@ -14,8 +14,11 @@
 
 <h2 align="center">Screenshots</h2>
 
-![](https://github.com/yleseverino/30FinancialTipsApp/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png)
-![](https://github.com/yleseverino/30FinancialTipsApp/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png)
+| ![](https://github.com/yleseverino/30FinancialTipsApp/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png)| ![](https://github.com/yleseverino/30FinancialTipsApp/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png)  |
+|-------------------------------------------------------|-------------------------------------------------------|
+
+
+
 ![](https://github.com/yleseverino/30FinancialTipsApp/demo_video.mp4)
 
 ------
